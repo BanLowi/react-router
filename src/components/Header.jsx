@@ -11,7 +11,7 @@ export default function Header() {
                         <div class="navbar-nav">
                             <NavLink to="/" className="nav-link active">Home Page</NavLink>
                             <NavLink to="/about" className="nav-link">Chi Siamo</NavLink>
-                            <NavLink to="/store" className="nav-link">Prodotti</NavLink>
+                            <NavLink to="/products" className="nav-link">Prodotti</NavLink>
 
                         </div>
                     </div>
