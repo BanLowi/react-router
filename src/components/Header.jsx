@@ -9,10 +9,9 @@ export default function Header() {
                     <NavLink to="/" className="navbar-brand"> Fake Store </NavLink>
                     <div class="collapse navbar-collapse" id="navbarID">
                         <div class="navbar-nav">
-                            <NavLink to="/" className="nav-link active">Home Page</NavLink>
+                            <NavLink to="/" className="nav-link">Home Page</NavLink>
                             <NavLink to="/about" className="nav-link">Chi Siamo</NavLink>
                             <NavLink to="/products" className="nav-link">Prodotti</NavLink>
-
                         </div>
                     </div>
                 </div>

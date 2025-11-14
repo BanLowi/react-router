@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import SiteLayout from "./layout/SiteLayout"
 import Homepage from "./pages/Homepage"
+import Products from "./pages/Products"
+import About from "./pages/About"
 
 function App() {
 
@@ -12,8 +14,8 @@ function App() {
         <Route element={<SiteLayout />}>
           {/* Alla pagina home va assegnato l'attributo index */}
           <Route index element={<Homepage />} />
-          <Route to="/products" element={<Homepage />} />
-          <Route to="/about" element={<Homepage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
