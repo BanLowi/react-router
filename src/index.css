@@ -1,1 +1,6 @@
 @import url("bootstrap");
+
+.description_box {
+    max-height: 80px;
+    overflow-y: auto;
+}

@@ -1,11 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useEffect, useState } from "react"
+import axios from "axios";
 
-import SiteLayout from "./layout/SiteLayout"
-import Homepage from "./pages/Homepage"
-import Products from "./pages/Products"
-import About from "./pages/About"
+import SiteLayout from "./layout/SiteLayout";
+import Homepage from "./pages/Homepage";
+import Products from "./pages/Products";
+import About from "./pages/About";
+
+const productsURL = "https://fakestoreapi.com/products"
 
 function App() {
+
+  const [products, setProducts] = useState([]);
+
+
+  function getProducts() {
+
+    axios.get(productsURL)
+      .then(response => setProducts(response.data))
+      .catch(error => console.log(error))
+  }
+
+  useEffect(getProducts, [])
 
   return (
     <BrowserRouter>
@@ -14,7 +30,7 @@ function App() {
         <Route element={<SiteLayout />}>
           {/* Alla pagina home va assegnato l'attributo index */}
           <Route index element={<Homepage />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products" element={<Products products={products} />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>
