@@ -30,7 +30,7 @@ export default function Product() {
 
                     <div className="card text-center">
                         <div className="card-header">
-                            {thisProduct.category}
+                            {thisProduct.category.toUpperCase()}
                         </div>
                         <div className="card-body text-center">
                             <h5 className="card-title">{thisProduct.title}</h5>
