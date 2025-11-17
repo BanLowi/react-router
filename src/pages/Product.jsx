@@ -20,22 +20,28 @@ export default function Product() {
             })
     }
 
-    useEffect(fetchProduct, []);
+    useEffect(fetchProduct, [id]);
 
     return (
 
         <div className="container">
 
-            <div class="card text-center">
-                <div class="card-header">
+
+            <div className="card text-center">
+                <div className="card-header">
                     {thisProduct.category}
                 </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">{thisProduct.title}</h5>
+                <div className="card-body text-center">
+                    <h5 className="card-title">{thisProduct.title}</h5>
                     <img src={thisProduct.image} alt="" className="card-img-center" />
-                    <Link to={"/products"} class="btn btn-primary d-block">Torna al catalogo</Link >
+                    <div className="d-flex">
+                        {Number(id) > 1 ? <Link to={`/products/${Number(id) - 1}`} className="btn btn-primary d-block">Precedente</Link > : ""}
+                        <Link to={"/products"} className="btn btn-primary d-block">Torna al catalogo</Link >
+                        <Link to={`/products/${Number(id) + 1}`} className="btn btn-primary d-block">Prossimo</Link >
+
+                    </div>
                 </div>
-                <div class="card-footer text-body-secondary">
+                <div className="card-footer text-body-secondary">
                     {thisProduct.price} &#8364;
                 </div>
             </div>
