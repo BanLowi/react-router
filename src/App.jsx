@@ -5,6 +5,7 @@ import axios from "axios";
 import SiteLayout from "./layout/SiteLayout";
 import Homepage from "./pages/Homepage";
 import Products from "./pages/Products";
+import Product from "./pages/Product";
 import About from "./pages/About";
 
 const productsURL = "https://fakestoreapi.com/products"
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<Homepage />} />
           <Route path="/products" element={<Products products={products} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/products/:id" element={<Product />} />
         </Route>
       </Routes>
     </BrowserRouter>

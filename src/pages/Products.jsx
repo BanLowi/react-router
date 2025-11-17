@@ -23,7 +23,7 @@ export default function Products({ products }) {
                                     </div>
                                     <img src={product.image} alt={product.title} className="card-img-top object-fit-contain" height={100} />
                                     <div className="card-body text-center">
-                                        <Link className="btn btn-sm btn-primary">VIEW</Link>
+                                        <Link className="btn btn-sm btn-primary" to={`products/${product.id}`}>VIEW</Link>
                                     </div>
                                 </div>
                             </div>
