@@ -25,26 +25,31 @@ export default function Product() {
     return (
 
         <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-12 col-lg-8">
 
+                    <div className="card text-center">
+                        <div className="card-header">
+                            {thisProduct.category}
+                        </div>
+                        <div className="card-body text-center">
+                            <h5 className="card-title">{thisProduct.title}</h5>
+                            <img src={thisProduct.image} alt="" className="card-img-center" />
+                            <div className="d-flex justify-content-between">
+                                {Number(id) > 1 ? <Link to={`/products/${Number(id) - 1}`} className="btn btn-primary d-block">Precedente</Link > : ""}
+                                <Link to={"/products"} className="btn btn-primary d-block">Torna al catalogo</Link >
+                                <Link to={`/products/${Number(id) + 1}`} className="btn btn-primary d-block">Prossimo</Link >
 
-            <div className="card text-center">
-                <div className="card-header">
-                    {thisProduct.category}
-                </div>
-                <div className="card-body text-center">
-                    <h5 className="card-title">{thisProduct.title}</h5>
-                    <img src={thisProduct.image} alt="" className="card-img-center" />
-                    <div className="d-flex">
-                        {Number(id) > 1 ? <Link to={`/products/${Number(id) - 1}`} className="btn btn-primary d-block">Precedente</Link > : ""}
-                        <Link to={"/products"} className="btn btn-primary d-block">Torna al catalogo</Link >
-                        <Link to={`/products/${Number(id) + 1}`} className="btn btn-primary d-block">Prossimo</Link >
-
+                            </div>
+                        </div>
+                        <div className="card-footer text-body-secondary">
+                            {thisProduct.price} &#8364;
+                        </div>
                     </div>
                 </div>
-                <div className="card-footer text-body-secondary">
-                    {thisProduct.price} &#8364;
-                </div>
             </div>
+
+
 
         </div>
     )
