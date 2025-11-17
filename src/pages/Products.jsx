@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Products({ products }) {
 
     /*
@@ -16,20 +18,12 @@ export default function Products({ products }) {
                         products.map(product => (
                             <div key={product.id} className="col">
                                 <div className="card h-100">
-                                    <img src={product.image} alt={product.title} className="card-img-top" height={200} />
-                                    <div className="card-header">
-                                        <h5>{product.title}</h5>
+                                    <div className="card-header bg-transparent border-0 text-center h-50">
+                                        <h6>{product.title}</h6>
                                     </div>
-                                    <div className="card-body h-25">
-                                        <small>{product.category}</small>
-                                        <div className="description_box">
-
-                                            <p className="card-text">
-                                                {product.description}
-                                            </p>
-                                        </div>
-
-                                        <button className="btn btn-sm btn-primary">COMPRA</button> <span>{product.price} &#8364; </span>
+                                    <img src={product.image} alt={product.title} className="card-img-top object-fit-contain" height={100} />
+                                    <div className="card-body text-center">
+                                        <Link className="btn btn-sm btn-primary">VIEW</Link>
                                     </div>
                                 </div>
                             </div>
