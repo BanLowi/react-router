@@ -32,8 +32,8 @@ function App() {
           {/* Alla pagina home va assegnato l'attributo index */}
           <Route index element={<Homepage />} />
           <Route path="/products" element={<Products products={products} />} />
-          <Route path="/about" element={<About />} />
           <Route path="/products/:id" element={<Product />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -10,7 +10,9 @@ export default function SiteLayout() {
 
         <div>
             <Header />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </div>
     )
 }
